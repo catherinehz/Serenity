@@ -22,8 +22,6 @@ public class GoogleImagesPage extends PageObject {
     @FindBy(css="#irc_cc")
     private WebElementFacade blockResult;
 
-    
-
     public static class Steps extends ScenarioSteps {
 
         @Page
