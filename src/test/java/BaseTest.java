@@ -7,5 +7,5 @@ import org.openqa.selenium.WebDriver;
 public abstract class BaseTest {
 
     @Managed
-    protected WebDriver driver;
+    WebDriver driver;
 }
