@@ -27,12 +27,10 @@ public class SponsorDashboardPage extends PageObject {
     private static final String INPUT_EMAIL_CSS= "#username";
     private static final String INPUT_PASSWORD_CSS = "#password";
 
-    //elements from left menu item
-    @FindBy(xpath="//div['ms-navigation-item']/descendant::a[5]")
-    private WebElementFacade buttonPropertiesList;
+    @FindBy(xpath = "//button[contains(@id, 'navigation-toggle')]")
+    private WebElementFacade buttonMenu;
 
-
-    public static class Steps extends ScenarioSteps {
+       public static class Steps extends ScenarioSteps {
 
         @Page
         private SponsorDashboardPage page; //get elements from outer class
@@ -60,7 +58,10 @@ public class SponsorDashboardPage extends PageObject {
         }
 
         @Step
-        public void clicks_on_propertiesList_button() { page.buttonPropertiesList.click();}
+           public void opens_sidemenu() {
+
+            page.buttonMenu.click();
+        }
 
 
 

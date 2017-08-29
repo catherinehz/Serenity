@@ -6,55 +6,28 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.fluentlenium.core.annotation.Page;
 
+
 @DefaultUrl("http://sponsor.sp1-plp-dev.dev.cloudroute.com/")
 public class PropertiesPage extends PageObject {
 
-    @FindBy(id="#username")
-    private WebElementFacade inputEmail;
+    @FindBy(xpath="//a[contains(@href, 'properties')]")
+    private WebElementFacade buttonProperties;
 
-    @FindBy(id="#password")
-    private WebElementFacade inputPassword;
+    @FindBy(css="div.header button")
+    private WebElementFacade buttonAddNewProperty;
 
-    @FindBy(css="button.md-raised")
-    private WebElementFacade buttonLogin;
-
-    @FindBy(xpath = "//md-input-container[1]")
-    private WebElementFacade containerEmail;
-
-    @FindBy(xpath = "//md-input-container[2]")
-    private WebElementFacade containerPassword;
-
-    private static final String INPUT_EMAIL_CSS= "#username";
-    private static final String INPUT_PASSWORD_CSS = "#password";
-
-    
-
-    public static class Steps extends ScenarioSteps {
+     public static class Steps extends ScenarioSteps {
 
         @Page
         private PropertiesPage page; //get elements from outer class
 
         @Step
-        public void opens_page() {
-            page.open();
+        public void clicks_properties_list() {
+            page.buttonProperties.click();
         }
 
         @Step
-        public void inputs_email_string(String text) {
-            page.containerEmail.click();
-            page.$(INPUT_EMAIL_CSS).type(text);
-        }
+         public void clicks_on_add_new_property() {page.buttonAddNewProperty.click();}
 
-        @Step
-        public void inputs_password_string(String text) {
-            page.containerPassword.click();
-            page.$(INPUT_PASSWORD_CSS).type(text);
-        }
-
-        @Step
-        public void clicks_on_login_button() {
-            page.buttonLogin.click();
-        }
-
-    }
+     }
 }

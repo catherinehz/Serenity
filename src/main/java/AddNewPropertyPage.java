@@ -15,6 +15,44 @@ public class AddNewPropertyPage extends PageObject {
     @FindBy(css="select[name='residency']")
     private WebElementFacade selectPropertyType;
 
+    @FindBy(css="md-select[name='propStatus']")
+    private WebElementFacade selectPropertyStatus;
+
+    @FindBy(css="input[name='propName']")
+    private WebElementFacade inputPropertyName;
+
+    @FindBy(css="input[name='propAddress']")
+    private WebElementFacade inputPropertyStreet;
+
+    @FindBy(css="input[name='propCity']")
+    private WebElementFacade inputPropertyCity;
+
+    @FindBy(css="md-select[name='propState']")
+    private WebElementFacade selectPropertyState;
+
+    @FindBy(css="input[name='propPostCode']")
+    private WebElementFacade inputPropertyPostalCode;
+
+    @FindBy(css="md-select-value#select_value_label_1197")
+    private WebElementFacade selectPropertyCountry;
+
+    @FindBy(css="button.prop-entity--btn")
+    private WebElementFacade buttonUploadDocuments;
+
+    @FindBy(css="div.prop-entity--form--upload-btn")
+    private WebElementFacade buttonUploadImage;
+
+    @FindBy(css="button.offering-entity--btn-cancel")
+    private WebElementFacade buttonBottonCancel;
+
+
+
+
+
+
+
+
+
 
 
     public static class Steps extends ScenarioSteps {
