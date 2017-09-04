@@ -20,7 +20,7 @@ public class AddNewPropertyPage extends PageObject {
     @FindBy(css="select[name='residency']")
     private WebElementFacade selectPropertyType;
 
-    @FindBy(css="md-select[name='propStatus']")
+    @FindBy(css="select[name='propStatus']")
     private WebElementFacade selectPropertyStatus;
 
     @FindBy(css="input[name='propName']")
@@ -32,13 +32,13 @@ public class AddNewPropertyPage extends PageObject {
     @FindBy(css="input[name='propCity']")
     private WebElementFacade inputPropertyCity;
 
-    @FindBy(css="md-select[name='propState']")
+    @FindBy(css="select[name='propState']")
     private WebElementFacade selectPropertyState;
 
     @FindBy(css="input[name='propPostCode']")
     private WebElementFacade inputPropertyPostalCode;
 
-    @FindBy(css="md-select-value#select_value_label_1197")
+    @FindBy(css="#select_value_label_1197")
     private WebElementFacade selectPropertyCountry;
 
     @FindBy(css="button.prop-entity--btn")
@@ -61,14 +61,17 @@ public class AddNewPropertyPage extends PageObject {
         @Step
         public void selects_random_property_type() {
             //RandomStringUtils.randomAlphanumeric(5);
-            int num = new Random().nextInt(page.selectPropertyType.getSelectOptions().size());
-            page.selectPropertyType.selectByIndex(num);
+            //int num = new Random().nextInt(page.selectPropertyType.getSelectOptions().size());
+            //page.selectPropertyType.click();
+            page.selectPropertyType.selectByIndex(1);
+
         }
 
         @Step
         public void selects_random_property_status() {
-            int num = new Random().nextInt(page.selectPropertyStatus.getSelectOptions().size());
-            page.selectPropertyStatus.selectByIndex(num);
+           // int num = new Random().nextInt(page.selectPropertyStatus.getSelectOptions().size());
+            //page.selectPropertyStatus.selectByIndex(num);
+            page.selectPropertyStatus.selectByIndex(2);
         }
 
         @Step
@@ -82,8 +85,9 @@ public class AddNewPropertyPage extends PageObject {
 
         @Step
         public void selects_property_state() {
-            int num = new Random().nextInt(page.selectPropertyState.getSelectOptions().size());
-            page.selectPropertyState.selectByIndex(num);
+            //int num = new Random().nextInt(page.selectPropertyState.getSelectOptions().size());
+            //page.selectPropertyState.selectByIndex(num);
+            page.selectPropertyState.selectByIndex(4);
         }
 
         @Step
