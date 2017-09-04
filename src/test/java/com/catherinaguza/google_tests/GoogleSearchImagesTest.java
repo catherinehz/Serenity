@@ -1,7 +1,5 @@
 package com.catherinaguza.google_tests;
 
-import com.catherinaguza.GoogleImagesPage;
-import com.catherinaguza.base.BaseTest;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;

@@ -30,7 +30,10 @@ public class PropertiesPage extends PageObject {
         }
 
         @Step
-         public void clicks_on_add_new_property() {page.buttonAddNewProperty.click();}
+         public void clicks_on_add_new_property() {
+            page.buttonAddNewProperty.waitUntilClickable();
+            page.buttonAddNewProperty.click();
+        }
 
      }
 }

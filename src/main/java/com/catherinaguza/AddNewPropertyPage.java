@@ -60,10 +60,34 @@ public class AddNewPropertyPage extends PageObject {
 
         @Step
         public void selects_random_property_type() {
-            RandomStringUtils.randomAlphanumeric(5);
+            //RandomStringUtils.randomAlphanumeric(5);
             int num = new Random().nextInt(page.selectPropertyType.getSelectOptions().size());
             page.selectPropertyType.selectByIndex(num);
         }
+
+        @Step
+        public void selects_random_property_status() {
+            int num = new Random().nextInt(page.selectPropertyStatus.getSelectOptions().size());
+            page.selectPropertyStatus.selectByIndex(num);
+        }
+
+        @Step
+        public void inputs_property_name() {page.inputPropertyName.type("Park Hyatt Maldives Hadahaa - 3");}
+
+        @Step
+        public void inputs_property_street_address() {page.inputPropertyStreet.type("582 Oliver St NW");}
+
+        @Step
+        public void inputs_property_city() {page.inputPropertyCity.type("Atlanta");}
+
+        @Step
+        public void selects_property_state() {
+            int num = new Random().nextInt(page.selectPropertyState.getSelectOptions().size());
+            page.selectPropertyState.selectByIndex(num);
+        }
+
+        @Step
+        public void inputs_property_postal_code() {page.inputPropertyPostalCode.type("13245");}
 
     }
 }

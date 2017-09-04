@@ -1,7 +1,6 @@
 package com.catherinaguza.google_tests;
 
 
-import com.catherinaguza.GooglePage;
 import com.catherinaguza.base.BaseTest;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
