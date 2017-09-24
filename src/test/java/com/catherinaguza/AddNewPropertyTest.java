@@ -16,13 +16,12 @@ public class AddNewPropertyTest extends BaseTest {
     public void verify_that_user_can_create_property_on_the_add_new_property_page() {
         user_on_properties_list_page.clicks_properties_list();
         user_on_properties_list_page.clicks_on_add_new_property();
+        user_on_add_new_property_page.selects_random_property_type_values();
+
         user_on_add_new_property_page.inputs_property_name();
         user_on_add_new_property_page.inputs_property_street_address();
         user_on_add_new_property_page.inputs_property_city();
         user_on_add_new_property_page.inputs_property_postal_code();
-        user_on_add_new_property_page.selects_random_property_type();
-        user_on_add_new_property_page.selects_random_property_status();
-        user_on_add_new_property_page.selects_property_state();
 
     }
 }
