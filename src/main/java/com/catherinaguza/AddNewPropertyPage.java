@@ -1,26 +1,34 @@
 package com.catherinaguza;
 
+import com.catherinaguza.base.BasePage;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.fluentlenium.core.annotation.Page;
 
+import java.util.List;
 import java.util.Random;
 
 @DefaultUrl("http://sponsor.sp1-plp-dev.dev.cloudroute.com/")
-public class AddNewPropertyPage extends PageObject {
+//является
+public class AddNewPropertyPage extends BasePage {
 
     @FindBy(css="div.header button")
     private WebElementFacade buttonAddNewProperty;
 
-    @FindBy(css="select[name='residency']")
+    //container for select elements
+    @FindBy(xpath="//md-select[@name='residency']/ancestor::div[1]")
     private WebElementFacade selectPropertyType;
 
-    @FindBy(css="select[name='propStatus']")
+    //use to get list with all values
+    @FindBy(css="select[name='residency'] option")
+    private List<WebElementFacade> selectPropertyTypeValues;
+
+    //make using a new method!!
+    @FindBy(css="md-select[name='propStatus']")
     private WebElementFacade selectPropertyStatus;
 
     @FindBy(css="input[name='propName']")
@@ -38,7 +46,7 @@ public class AddNewPropertyPage extends PageObject {
     @FindBy(css="input[name='propPostCode']")
     private WebElementFacade inputPropertyPostalCode;
 
-    @FindBy(css="#select_value_label_1197")
+    @FindBy(css="#select_value_label_7")
     private WebElementFacade selectPropertyCountry;
 
     @FindBy(css="button.prop-entity--btn")
@@ -50,6 +58,7 @@ public class AddNewPropertyPage extends PageObject {
     @FindBy(css="button.offering-entity--btn-cancel")
     private WebElementFacade buttonBottonCancel;
 
+
     public static class Steps extends ScenarioSteps {
 
         @Page
@@ -59,19 +68,22 @@ public class AddNewPropertyPage extends PageObject {
         public void clicks_on_add_new_property_button() {page.buttonAddNewProperty.click();}
 
         @Step
-        public void selects_random_property_type() {
+        public void selects_random_property_type_values() {
             //RandomStringUtils.randomAlphanumeric(5);
-            //int num = new Random().nextInt(page.selectPropertyType.getSelectOptions().size());
-            //page.selectPropertyType.click();
-            page.selectPropertyType.selectByIndex(1);
+            //int num = new Random().nextInt(page.selectPropertyType.getSelectOptions().size();
+            page.selectPropertyType.click();
+            page.getRandomSelectOption(page.selectPropertyTypeValues).click();
+        }
 
+        private String getRandomPropertyTypeValue() {
+            String[] propertyTypeValues = {"Affordable Housing", "Condo", "Hotel"};
+            return propertyTypeValues[new Random().nextInt(propertyTypeValues.length)];
         }
 
         @Step
         public void selects_random_property_status() {
            // int num = new Random().nextInt(page.selectPropertyStatus.getSelectOptions().size());
             //page.selectPropertyStatus.selectByIndex(num);
-            page.selectPropertyStatus.selectByIndex(2);
         }
 
         @Step
@@ -87,7 +99,6 @@ public class AddNewPropertyPage extends PageObject {
         public void selects_property_state() {
             //int num = new Random().nextInt(page.selectPropertyState.getSelectOptions().size());
             //page.selectPropertyState.selectByIndex(num);
-            page.selectPropertyState.selectByIndex(4);
         }
 
         @Step
