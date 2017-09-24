@@ -1,7 +1,5 @@
 package com.catherinaguza;
 
-import com.catherinaguza.InvestorMyProfilePage;
-import com.catherinaguza.base.BaseTest;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -16,7 +14,7 @@ public class InvestorMyProfileTest {
     protected WebDriver driver;
 
     @Steps
-    private InvestorMyProfilePage.Steps user_on_investor_offering_page;
+    private InvestorOfferingPage.Steps user_on_investor_offering_page;
 
     @Test
     public void verify_that_user_can_login_and_logout() {
@@ -31,7 +29,7 @@ public class InvestorMyProfileTest {
             user_on_investor_offering_page.inputs_password_string("P@ssw0rd");
             user_on_investor_offering_page.clicks_on_login_button();
 
-            user_on_investor_offering_page.waits_until_spinner_is_disappear();
+            //user_on_investor_offering_page.waits_until_spinner_is_disappear();
             user_on_investor_offering_page.clicks_on_my_investor_profile();
             user_on_investor_offering_page.clicks_on_logout_button();
         }
