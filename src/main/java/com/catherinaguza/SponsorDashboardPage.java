@@ -11,10 +11,10 @@ import org.fluentlenium.core.annotation.Page;
 @DefaultUrl("http://sponsor.sp1-plp-dev.dev.cloudroute.com/")
 public class SponsorDashboardPage extends PageObject {
 
-    @FindBy(id="#username")
+    @FindBy(id="input_0")
     private WebElementFacade inputEmail;
 
-    @FindBy(id="#password")
+    @FindBy(id="#input_1")
     private WebElementFacade inputPassword;
 
     @FindBy(css="button.md-raised")
@@ -26,8 +26,8 @@ public class SponsorDashboardPage extends PageObject {
     @FindBy(xpath = "//md-input-container[2]")
     private WebElementFacade containerPassword;
 
-    private static final String INPUT_EMAIL_CSS= "#username";
-    private static final String INPUT_PASSWORD_CSS = "#password";
+    private static final String INPUT_EMAIL_CSS= "#input_0";
+    private static final String INPUT_PASSWORD_CSS = "#input_1";
 
     @FindBy(xpath = "//button[contains(@id, 'navigation-toggle')]")
     private WebElementFacade buttonMenu;

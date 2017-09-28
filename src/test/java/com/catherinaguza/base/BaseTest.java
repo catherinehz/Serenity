@@ -22,4 +22,6 @@ public abstract class BaseTest {
     public void login_before_test() {
         user_on_dashboard_page.logs_in();
     }
+
+
 }
